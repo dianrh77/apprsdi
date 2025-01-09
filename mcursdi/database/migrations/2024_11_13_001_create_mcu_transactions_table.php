@@ -1,0 +1,144 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('mcu_transactions', function (Blueprint $table) {
+            $table->id();
+            $table->dateTime('tanggal');
+            $table->string('kd_regpoli')->unique();
+            $table->string('kd_rekmed');
+            $table->string('kelompok');
+            $table->string('nama');
+            $table->string('alamat')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('umur')->nullable();
+            $table->string('jns_kelamin')->nullable();
+            $table->integer('tinggi_badan')->nullable();
+            $table->integer('berat_badan')->nullable();
+            $table->string('anamnesa')->nullable();
+            $table->boolean('alergi')->nullable();
+            $table->string('alergi_waktu')->nullable();
+            $table->string('alergi_ket')->nullable();
+            $table->boolean('asma')->nullable();
+            $table->string('asma_waktu')->nullable();
+            $table->string('asma_ket')->nullable();
+            $table->boolean('hipertensi')->nullable();
+            $table->string('hipertensi_waktu')->nullable();
+            $table->string('hipertensi_ket')->nullable();
+            $table->boolean('dm')->nullable();
+            $table->string('dm_waktu')->nullable();
+            $table->string('dm_ket')->nullable();
+            $table->boolean('jantung')->nullable();
+            $table->string('jantung_waktu')->nullable();
+            $table->string('jantung_ket')->nullable();
+            $table->boolean('fraktur')->nullable();
+            $table->string('fraktur_waktu')->nullable();
+            $table->string('fraktur_ket')->nullable();
+            $table->boolean('gastritis')->nullable();
+            $table->string('gastritis_waktu')->nullable();
+            $table->string('gastritis_ket')->nullable();
+            $table->boolean('ginjal')->nullable();
+            $table->string('ginjal_waktu')->nullable();
+            $table->string('ginjal_ket')->nullable();
+            $table->boolean('hamaerrhoid')->nullable();
+            $table->string('hamaerrhoid_waktu')->nullable();
+            $table->string('hamaerrhoid_ket')->nullable();
+            $table->boolean('hepatitis')->nullable();
+            $table->string('hepatitis_waktu')->nullable();
+            $table->string('hepatitis_ket')->nullable();
+            $table->boolean('epilepsi')->nullable();
+            $table->string('epilepsi_waktu')->nullable();
+            $table->string('epilepsi_ket')->nullable();
+            $table->boolean('tbc')->nullable();
+            $table->string('tbc_waktu')->nullable();
+            $table->string('tbc_ket')->nullable();
+            $table->boolean('hernia')->nullable();
+            $table->string('hernia_waktu')->nullable();
+            $table->string('hernia_ket')->nullable();
+            $table->boolean('herpes')->nullable();
+            $table->string('herpes_waktu')->nullable();
+            $table->string('herpes_ket')->nullable();
+            $table->boolean('operasi')->nullable();
+            $table->string('operasi_waktu')->nullable();
+            $table->string('operasi_ket')->nullable();
+            $table->string('kesadaran')->nullable();
+            $table->string('vas_score')->nullable();
+            $table->string('tekanan_darah')->nullable();
+            $table->string('nadi')->nullable();
+            $table->string('nadi_ket')->nullable();
+            $table->string('respirasi')->nullable();
+            $table->string('respirasi_ket')->nullable();
+            $table->string('suhu')->nullable();
+            $table->string('suhu_ket')->nullable();
+            $table->string('ukuran_kepala')->nullable();
+            $table->boolean('mata_kelainan')->nullable();
+            $table->string('mata_ket')->nullable();
+            $table->string('buta_warna')->nullable();
+            $table->boolean('kelainan_hidung')->nullable();
+            $table->string('kelainan_hidung_ket')->nullable();
+            $table->boolean('kelainan_mulut')->nullable();
+            $table->string('kelainan_mulut_ket')->nullable();
+            $table->boolean('kelainan_tenggorokan')->nullable();
+            $table->string('kelainan_tenggorokan_ket')->nullable();
+            $table->boolean('kelainan_tiroid')->nullable();
+            $table->string('kelainan_tiroid_ket')->nullable();
+            $table->boolean('kelainan_jvp')->nullable();
+            $table->string('kelainan_jvp_ket')->nullable();
+            $table->boolean('kelainan_kgb')->nullable();
+            $table->string('kelainan_kgb_ket')->nullable();
+            $table->string('thorax_gerak')->nullable();
+            $table->string('thorax_deformitas')->nullable();
+            $table->string('thorax_bentuk')->nullable();
+            $table->boolean('thorax_jantung_ictus_cordis')->nullable();
+            $table->string('thorax_jantung_bunyi')->nullable();
+            $table->boolean('thorax_jantung_bising')->nullable();
+            $table->boolean('kelainan_thorax_paru_palpasi')->nullable();
+            $table->string('thorax_paru_palpasi')->nullable();
+            $table->boolean('kelainan_thorax_paru_perkusi')->nullable();
+            $table->string('thorax_paru_perkusi')->nullable();
+            $table->boolean('kelainan_thorax_paru_auskultasi')->nullable();
+            $table->string('thorax_paru_auskultasi')->nullable();
+            $table->boolean('perut_soefl')->nullable();
+            $table->boolean('perut_meteorismus')->nullable();
+            $table->boolean('perut_massa')->nullable();
+            $table->boolean('perut_bising_usus')->nullable();
+            $table->boolean('perut_hepar')->nullable();
+            $table->boolean('perut_lien')->nullable();
+            $table->boolean('perut_appendiks_mcburney')->nullable();
+            $table->boolean('perut_appendiks_rovsing')->nullable();
+            $table->boolean('kelainan_ext_deformitas')->nullable();
+            $table->string('ext_deformitas')->nullable();
+            $table->boolean('kelainan_ext_kelemahan_anggota')->nullable();
+            $table->string('ext_kelemahan_anggota')->nullable();
+            $table->boolean('kelainan_ext_pitting_oedem')->nullable();
+            $table->string('ext_pitting_oedem')->nullable();
+            $table->boolean('kelainan_ext_varises')->nullable();
+            $table->string('ext_varises')->nullable();
+            $table->boolean('kelainan_ext_tremor')->nullable();
+            $table->string('ext_tremor')->nullable();
+            $table->string('status_kesehatan')->nullable();
+            $table->string('rekomendasi')->nullable();
+            $table->string('kd_dokter')->nullable();
+            $table->string('nama_dokter')->nullable();
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('mcu_transactions');
+    }
+};

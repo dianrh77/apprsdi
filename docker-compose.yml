@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  app1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_SOURCE: ./assetrsdi
+    volumes:
+      - ./assetrsdi:/var/www/html
+    ports:
+      - "8001:8000"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+    networks:
+      - laravel_net
+
+  app2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_SOURCE: ./mcursdi
+    volumes:
+      - ./mcursdi:/var/www/html
+    ports:
+      - "8002:8000"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+    networks:
+      - laravel_net
+
+networks:
+  laravel_net:
+    driver: bridge
+
+
+
+
